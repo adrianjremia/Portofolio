@@ -488,3 +488,126 @@ span {
   grid-template-columns: 1fr;
   gap: 3rem;
 }
+
+/* -------------------
+   RESPONSIVE FIXES
+------------------- */
+
+/* Tablet screens (max 995px) */
+@media (max-width: 995px) {
+  header {
+    padding: 1rem 5%;
+  }
+
+  nav a {
+    margin-left: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .home-wrapper {
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+    padding: 0 5%;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.2rem;
+  }
+
+  .home-img img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-content h1,
+  .projects h2,
+  .experiences h2 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .project-card,
+  .experience-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-card img,
+  .experience-card img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .project-info h3,
+  .experience-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .project-info p,
+  .experience-info p {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile screens (max 600px) */
+@media (max-width: 600px) {
+  html {
+    font-size: 55%; /* scale down font */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 2.4rem;
+  }
+
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-content h3 {
+    font-size: 2rem;
+  }
+
+  .typing-text {
+    font-size: 2rem;
+    min-width: auto;
+  }
+
+  section {
+    padding: 4rem 5%;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+}
