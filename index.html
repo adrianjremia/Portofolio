@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adrian Jeremia Kurniawan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Adrian Jeremia Kurniawan</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="experiences.html">Experiences</a>
+    </nav>
+  </header>
+
+  <section class="home">
+    <div class="home-wrapper">
+    <div class="home-img">
+      <img src="main.jpg" alt="Profile photo">
+    </div>
+    <div class="home-content">
+      <h1>Hi, It's <span>Adrian</span></h1>
+      <h3 class="typing-text">I'm interested in <span></span></h3>
+      <p>Get in contact with me!</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/adrian-jeremia-kurniawan/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/adrianjremia"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/adrianjremia/"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <script>
+    const text = ["Game Development", "Front End Development", "UI/UX Design"];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+    const typingSpan = document.querySelector(".typing-text span");
+
+    function type() {
+        if (count === text.length) count = 0;
+        currentText = text[count];
+        letter = currentText.slice(0, ++index);
+        typingSpan.textContent = letter;
+        if (letter.length === currentText.length) {
+            setTimeout(() => erase(), 1500);
+        } else {
+            setTimeout(type, 100);
+        }
+    }
+
+    function erase() {
+        letter = currentText.slice(0, --index);
+        typingSpan.textContent = letter;
+        if (letter.length === 0) {
+            count++;
+            setTimeout(type, 300);
+        } else {
+            setTimeout(erase, 50);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        type();
+    });
+  </script>
+
+</body>
+</html>
